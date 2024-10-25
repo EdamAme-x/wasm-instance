@@ -1,12 +1,15 @@
 /*
  * @module @evex/wasmex
- * Run wasm in multiple environments with the same code (Browser, Node.js, Deno,
+ * @description Run wasm in multiple environments with the same code (Browser, Node.js, Deno,
 Bun, etc.) 
  */
+
 // deno-lint-ignore ban-types
 type Base64 = string & {};
 
 /**
+ * @description
+ * 
  * Loads and instantiates a WebAssembly module from a given source.
  *
  * The source can be a Uint8Array or a base64 encoded string.
