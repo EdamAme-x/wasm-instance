@@ -6,6 +6,7 @@ Bun, etc.)
 
 // deno-lint-ignore ban-types
 type Base64 = string & {};
+const bytesToBase64 = (...bytes: number[]): Base64 => btoa(String.fromCharCode(...bytes))
 
 /**
  * @description
@@ -29,7 +30,7 @@ export async function Wasmex(
   module: WebAssembly.Module;
 }> {
   if (source instanceof Uint8Array) {
-    source = btoa(String.fromCharCode(...source));
+    source = bytesToBase64(...source);
   }
 
   return (
